@@ -17,6 +17,14 @@ UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var lastPoint = CGPoint.zero
+    var red: CGFloat = 0.0
+    var green: CGFloat = 0.0
+    var blue: CGFloat = 0.0
+    var brushWidth: CGFloat = 10.0
+    var opacity: CGFloat = 1.0
+    var swiped = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,6 +64,59 @@ UINavigationControllerDelegate {
         imageView.image = image
         self.dismiss(animated: true, completion: nil);
     }
+    
+//    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        swiped = true
+//        if let touch = touches.first {
+//            let currentPoint = touch.location(in: view)
+//            drawLine(from: lastPoint, to: currentPoint)
+//            
+//            lastPoint = currentPoint
+//        }
+//    }
+//    
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if !swiped {
+//            // draw a single point
+//            self.drawLine(from: lastPoint, to: lastPoint)
+//        }
+//    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        swiped = false
+//        if let touch = touches.first {
+//            lastPoint = touch.location(in: self.view)
+//        }
+//    }
+//    
+//    func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
+//        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
+//        
+//        imageView.image?.draw(in: view.bounds)
+//        
+//        let context = UIGraphicsGetCurrentContext()
+//        
+//        context?.move(to: fromPoint)
+//        context?.addLine(to: toPoint)
+//        
+//        context?.setLineCap(CGLineCap.round)
+//        context?.setLineWidth(brushWidth)
+//        context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+//        context?.setBlendMode(CGBlendMode.normal)
+//        context?.strokePath()
+//        
+//        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+//        imageView.alpha = opacity
+//        UIGraphicsEndImageContext()
+//    }
+
+    
+    
+
+
+    
+    
+        
 
 }
 
