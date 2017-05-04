@@ -40,6 +40,7 @@ UINavigationControllerDelegate {
 
     @IBAction func galleryOption(_ sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            print("in gallery option")
             var imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
@@ -60,55 +61,56 @@ UINavigationControllerDelegate {
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        print("in picker controller")
         imageView.image = image
         self.dismiss(animated: true, completion: nil);
     }
     
-//    
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        swiped = true
-//        if let touch = touches.first {
-//            let currentPoint = touch.location(in: view)
-//            drawLine(from: lastPoint, to: currentPoint)
-//            
-//            lastPoint = currentPoint
-//        }
-//    }
-//    
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if !swiped {
-//            // draw a single point
-//            self.drawLine(from: lastPoint, to: lastPoint)
-//        }
-//    }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        swiped = false
-//        if let touch = touches.first {
-//            lastPoint = touch.location(in: self.view)
-//        }
-//    }
-//    
-//    func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-//        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
-//        
-//        imageView.image?.draw(in: view.bounds)
-//        
-//        let context = UIGraphicsGetCurrentContext()
-//        
-//        context?.move(to: fromPoint)
-//        context?.addLine(to: toPoint)
-//        
-//        context?.setLineCap(CGLineCap.round)
-//        context?.setLineWidth(brushWidth)
-//        context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
-//        context?.setBlendMode(CGBlendMode.normal)
-//        context?.strokePath()
-//        
-//        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-//        imageView.alpha = opacity
-//        UIGraphicsEndImageContext()
-//    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        swiped = true
+        if let touch = touches.first {
+            let currentPoint = touch.location(in: view)
+            drawLine(from: lastPoint, to: currentPoint)
+            
+            lastPoint = currentPoint
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !swiped {
+            // draw a single point
+            self.drawLine(from: lastPoint, to: lastPoint)
+        }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        swiped = false
+        if let touch = touches.first {
+            lastPoint = touch.location(in: self.view)
+        }
+    }
+    
+    func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
+        
+        imageView.image?.draw(in: view.bounds)
+        
+        let context = UIGraphicsGetCurrentContext()
+        
+        context?.move(to: fromPoint)
+        context?.addLine(to: toPoint)
+        
+        context?.setLineCap(CGLineCap.round)
+        context?.setLineWidth(brushWidth)
+        context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+        context?.setBlendMode(CGBlendMode.normal)
+        context?.strokePath()
+        
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        imageView.alpha = opacity
+        UIGraphicsEndImageContext()
+    }
 
     
     
