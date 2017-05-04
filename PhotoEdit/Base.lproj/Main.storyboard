@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,9 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHG-fA-4Yu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="65n-Ey-ctB">
+                                <rect key="frame" x="16" y="219" width="343" height="230"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="To edit picture please :" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-Qx-FVH">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="McG-Wq-sA4"/>
                                         </constraints>
@@ -30,6 +38,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flb-86-NW3">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.15294117647058825" green="0.68235294117647061" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6gg-R0-Uud"/>
@@ -42,6 +51,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Or" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2u-zM-yDV">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="g41-1W-Ji1"/>
                                         </constraints>
@@ -50,6 +60,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDg-Kx-5Ys">
+                                        <rect key="frame" x="0.0" y="180" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cPM-Yy-0g9"/>
@@ -63,29 +74,46 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHG-fA-4Yu"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-U2-oWx">
+                                <rect key="frame" x="16" y="617" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-n5-Hgz">
+                                <rect key="frame" x="325" y="617" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="65n-Ey-ctB" secondAttribute="trailing" id="BeV-cL-meW"/>
-                            <constraint firstItem="65n-Ey-ctB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="K0J-pc-pCU"/>
-                            <constraint firstItem="MHG-fA-4Yu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Npz-v0-s2g"/>
-                            <constraint firstItem="MHG-fA-4Yu" firstAttribute="centerX" secondItem="65n-Ey-ctB" secondAttribute="centerX" id="Okr-VX-6gF"/>
-                            <constraint firstItem="65n-Ey-ctB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZQz-0h-50z"/>
-                            <constraint firstItem="65n-Ey-ctB" firstAttribute="top" secondItem="MHG-fA-4Yu" secondAttribute="bottom" constant="13" id="d0Z-ik-QVl"/>
-                            <constraint firstItem="MHG-fA-4Yu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="z9I-XK-ok3"/>
+                            <constraint firstAttribute="trailing" secondItem="MHG-fA-4Yu" secondAttribute="trailing" id="2Uk-rY-vyG"/>
+                            <constraint firstItem="MHG-fA-4Yu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5DO-fs-CqQ"/>
+                            <constraint firstItem="aKV-U2-oWx" firstAttribute="baseline" secondItem="iJK-n5-Hgz" secondAttribute="baseline" id="94k-c7-np1"/>
+                            <constraint firstItem="65n-Ey-ctB" firstAttribute="trailing" secondItem="iJK-n5-Hgz" secondAttribute="trailing" id="LDh-FD-1oe"/>
+                            <constraint firstItem="65n-Ey-ctB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a29-bv-GqE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MHG-fA-4Yu" secondAttribute="bottom" id="d3S-15-Cei"/>
+                            <constraint firstItem="MHG-fA-4Yu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dHW-dW-0Uv"/>
+                            <constraint firstItem="65n-Ey-ctB" firstAttribute="centerY" secondItem="MHG-fA-4Yu" secondAttribute="centerY" id="eNs-C7-egS"/>
+                            <constraint firstAttribute="bottom" secondItem="aKV-U2-oWx" secondAttribute="bottom" constant="20" symbolic="YES" id="i9J-Wz-pe6"/>
+                            <constraint firstItem="65n-Ey-ctB" firstAttribute="leading" secondItem="aKV-U2-oWx" secondAttribute="leading" id="mam-ZT-V4p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="65n-Ey-ctB" secondAttribute="trailing" id="qB0-7G-ec8"/>
+                            <constraint firstItem="iJK-n5-Hgz" firstAttribute="top" secondItem="aKV-U2-oWx" secondAttribute="top" id="r9y-SF-gOR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonView" destination="65n-Ey-ctB" id="sWc-56-Jon"/>
+                        <outlet property="colorButton" destination="aKV-U2-oWx" id="e67-Po-vfK"/>
                         <outlet property="galleryButton" destination="bDg-Kx-5Ys" id="kby-lM-19I"/>
                         <outlet property="imageView" destination="MHG-fA-4Yu" id="HNX-dR-if6"/>
+                        <outlet property="saveButton" destination="iJK-n5-Hgz" id="dfs-Bm-6Eg"/>
                         <outlet property="stackView" destination="65n-Ey-ctB" id="YSA-x7-sal"/>
                         <outlet property="takePictureButton" destination="flb-86-NW3" id="WNP-Vo-kPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="117.39130434782609" y="123.09782608695653"/>
         </scene>
     </scenes>
 </document>
