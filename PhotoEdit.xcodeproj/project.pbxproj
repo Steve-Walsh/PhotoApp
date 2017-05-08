@@ -15,6 +15,7 @@
 		7B1771FA1E8D4C70001527BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1771F81E8D4C70001527BC /* LaunchScreen.storyboard */; };
 		7B1772051E8D4C70001527BC /* PhotoEditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1772041E8D4C70001527BC /* PhotoEditTests.swift */; };
 		7B1772101E8D4C70001527BC /* PhotoEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17720F1E8D4C70001527BC /* PhotoEditUITests.swift */; };
+		AAEE7A711EC0A290009F1FD7 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7B17720B1E8D4C70001527BC /* PhotoEditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B17720F1E8D4C70001527BC /* PhotoEditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditUITests.swift; sourceTree = "<group>"; };
 		7B1772111E8D4C70001527BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		7B1771EB1E8D4C6F001527BC /* PhotoEdit */ = {
 			isa = PBXGroup;
 			children = (
+				AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */,
 				7B1771EC1E8D4C6F001527BC /* AppDelegate.swift */,
 				7B1771EE1E8D4C6F001527BC /* ViewController.swift */,
 				7B1771F01E8D4C6F001527BC /* Main.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAEE7A711EC0A290009F1FD7 /* HRToast+UIView.swift in Sources */,
 				7B1771F51E8D4C6F001527BC /* PhotoEdit.xcdatamodeld in Sources */,
 				7B1771EF1E8D4C6F001527BC /* ViewController.swift in Sources */,
 				7B1771ED1E8D4C6F001527BC /* AppDelegate.swift in Sources */,
@@ -507,6 +511,7 @@
 				7B1772161E8D4C70001527BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B1772171E8D4C70001527BC /* Build configuration list for PBXNativeTarget "PhotoEditTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				7B1772191E8D4C70001527BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B17721A1E8D4C70001527BC /* Build configuration list for PBXNativeTarget "PhotoEditUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				7B17721C1E8D4C70001527BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
