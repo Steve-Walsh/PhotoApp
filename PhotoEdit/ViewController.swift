@@ -19,7 +19,12 @@ UINavigationControllerDelegate {
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet var colorPicker: SwiftHSVColorPicker!
+    var selectedColor: UIColor = UIColor.white
+
     var viewForScreenShot: UIView!
+    var backgroundImage: UIImage!
     
     
     @IBOutlet weak var cancelButton: UIButton!
@@ -82,7 +87,8 @@ UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         showImageStuff()
-        imageView.image = image
+        imageView.image = image;
+        backgroundImage = image;
         self.dismiss(animated: true, completion: nil);
     }
     
@@ -136,7 +142,9 @@ UINavigationControllerDelegate {
 
     }
     @IBAction func cancel(_ sender: Any) {
-        hideImageStuff()
+        //hideImageStuff()
+        imageView.image = nil
+        imageView.image = backgroundImage;
     }
     
     func hideImageStuff(){
@@ -167,9 +175,21 @@ UINavigationControllerDelegate {
         imageView.isHidden = false;
     }
     
+
+    
+    @IBAction func changeColor(_ sender: AnyObject) {
+//        let colorPicker = SwiftHSVColorPicker(frame: CGRectMake(10, 20, 300, 400))
+//        self.view.addSubview(colorPicker)
+//        colorPicker.setViewColor(UIColor.redColor())
+        
+        colorPicker.setViewColor(selectedColor)
+    }
         
 
 }
+
+
+
 extension UIImageView {
     
     var screenShot: UIImageView?  {
