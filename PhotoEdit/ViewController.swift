@@ -25,7 +25,7 @@ UINavigationControllerDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet var colorPicker: SwiftHSVColorPicker!
+
     var selectedColor: UIColor = UIColor.white
 
     var viewForScreenShot: UIView!
@@ -57,7 +57,6 @@ UINavigationControllerDelegate {
         exitOptionsView.isHidden = true
         saveView.isHidden = true
 
-        // Do any additional setup after loading the view, typically from a nib.
         
     }
     
@@ -144,6 +143,7 @@ UINavigationControllerDelegate {
     //save image details
     @IBAction func saveImage(_ sender: Any) {
         saveView.isHidden = false
+        exitOptionsView.isHidden = true
     }
     @IBAction func cancelSave(_ sender: Any) {
         saveView.isHidden = true
@@ -157,32 +157,71 @@ UINavigationControllerDelegate {
         self.view.makeToast(message: "Picture Saved", duration: 2.0, position:HRToastPositionCenter as AnyObject)
     }
     @IBAction func facebookSave(_ sender: Any) {
+        var image = captureScreen()
         
-//        hideImageStuff()
-//        saveView.isHidden = true
+        
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)){
-            _ = imageView.facebook;
+            //_ = imageView.facebook;
+            saveView.isHidden = false
+            showImageStuff()
+            
+            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            composeSheet?.setInitialText("Hello, Facebook!")
+            composeSheet?.add(image)
+            self.present(composeSheet!, animated: true, completion: nil)
+            
             self.view.makeToast(message: "Saved to facebook", duration: 2.0, position:HRToastPositionCenter as AnyObject)
         }else{
+            saveView.isHidden = false
+            showImageStuff()
             self.view.makeToast(message: "Please log into facebook on your phone", duration: 2.0, position:HRToastPositionCenter as AnyObject)
         }
         
     }
     @IBAction func twitterSave(_ sender: Any) {
+        
+        var image = captureScreen()
+        
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)){
-            _ = imageView.twitter;
+            //_ = imageView.twitter;
+            saveView.isHidden = false
+            showImageStuff()
+            
+            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            composeSheet!.setInitialText("Hello, twitter!")
+            composeSheet!.add(image)
+            self.present(composeSheet!, animated: true, completion: nil)
+            
+            
             self.view.makeToast(message: "Tweet created", duration: 2.0, position:HRToastPositionCenter as AnyObject)
         }else{
+            saveView.isHidden = false
+            showImageStuff()
             self.view.makeToast(message: "Please log into twitter on your phone", duration: 2.0, position:HRToastPositionCenter as AnyObject)
         }
         
     }
     
+    func captureScreen() -> UIImage? {
+       
+        saveButton.alpha = 0;
+        colorButton.alpha = 0;
+        cancelButton.alpha = 0;
+        exitOptionsView.isHidden = true
+        saveView.isHidden = true
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, UIScreen.main.scale)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
     //Cancel view options
     
     @IBAction func cancel(_ sender: Any) {
-
         exitOptionsView.isHidden = false
+        saveView.isHidden = true
         
     }
     @IBAction func cancelEdit(_ sender: Any) {
@@ -243,15 +282,13 @@ UINavigationControllerDelegate {
 
     
     @IBAction func changeColor(_ sender: AnyObject) {
-//        let colorPicker = SwiftHSVColorPicker(frame: CGRectMake(10, 20, 300, 400))
-//        self.view.addSubview(colorPicker)
-//        colorPicker.setViewColor(UIColor.redColor())
         
-//        colorPicker.setViewColor(selectedColor)
+        print("change color")
+
     }
     
     
-        
+    
 
 }
 
@@ -269,16 +306,20 @@ extension UIImageView {
         }
         return nil
     }
+    /*
     var facebook: UIImageView?  {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, 1.0);
         if let _ = UIGraphicsGetCurrentContext() {
             drawHierarchy(in: bounds, afterScreenUpdates: true)
             let screenshot = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
+            
+            //return screenshot
 
-            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            composeSheet?.setInitialText("Hello, Facebook!")
-            composeSheet?.add(screenshot)
+            //let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            //composeSheet?.setInitialText("Hello, Facebook!")
+            //composeSheet?.add(screenshot)
+            //present(composeSheet, animated: true, completion: nil)
         }
         return nil
     }
@@ -290,11 +331,13 @@ extension UIImageView {
             let screenshot = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            composeSheet?.setInitialText("Hello, twitter!")
-            composeSheet?.add(screenshot)
+            composeSheet!.setInitialText("Hello, twitter!")
+            composeSheet!.add(screenshot!)
+            //present(composeSheet, animated: true, completion: nil)
         }
         return nil
     }
+     */
 }
 
 extension UIViewController {
@@ -305,7 +348,6 @@ extension UIViewController {
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
-//        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
