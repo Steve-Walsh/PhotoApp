@@ -20,6 +20,8 @@
 		7BDAD4DC1EC5D9FA00BAC784 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAD4D71EC5D9FA00BAC784 /* ColorWheel.swift */; };
 		7BDAD4DD1EC5D9FA00BAC784 /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAD4D81EC5D9FA00BAC784 /* SelectedColorView.swift */; };
 		7BDAD4DE1EC5D9FA00BAC784 /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAD4D91EC5D9FA00BAC784 /* SwiftHSVColorPicker.swift */; };
+		AA689F5D1ED4720C0069FB2F /* fb-art.png in Resources */ = {isa = PBXBuildFile; fileRef = AA689F5B1ED4720C0069FB2F /* fb-art.png */; };
+		AA689F5E1ED4720C0069FB2F /* twitter-icon-download-18.png in Resources */ = {isa = PBXBuildFile; fileRef = AA689F5C1ED4720C0069FB2F /* twitter-icon-download-18.png */; };
 		AAEE7A711EC0A290009F1FD7 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		7BDAD4D71EC5D9FA00BAC784 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 		7BDAD4D81EC5D9FA00BAC784 /* SelectedColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedColorView.swift; sourceTree = "<group>"; };
 		7BDAD4D91EC5D9FA00BAC784 /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHSVColorPicker.swift; sourceTree = "<group>"; };
+		AA689F5B1ED4720C0069FB2F /* fb-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-art.png"; sourceTree = "<group>"; };
+		AA689F5C1ED4720C0069FB2F /* twitter-icon-download-18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon-download-18.png"; sourceTree = "<group>"; };
 		AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 				7B1772031E8D4C70001527BC /* PhotoEditTests */,
 				7B17720E1E8D4C70001527BC /* PhotoEditUITests */,
 				7B1771EA1E8D4C6F001527BC /* Products */,
+				AA689F5F1ED472110069FB2F /* icons */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +149,15 @@
 				7B1772111E8D4C70001527BC /* Info.plist */,
 			);
 			path = PhotoEditUITests;
+			sourceTree = "<group>";
+		};
+		AA689F5F1ED472110069FB2F /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				AA689F5B1ED4720C0069FB2F /* fb-art.png */,
+				AA689F5C1ED4720C0069FB2F /* twitter-icon-download-18.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B1771FA1E8D4C70001527BC /* LaunchScreen.storyboard in Resources */,
+				AA689F5E1ED4720C0069FB2F /* twitter-icon-download-18.png in Resources */,
+				AA689F5D1ED4720C0069FB2F /* fb-art.png in Resources */,
 				7B1771F71E8D4C70001527BC /* Assets.xcassets in Resources */,
 				7B1771F21E8D4C6F001527BC /* Main.storyboard in Resources */,
 			);

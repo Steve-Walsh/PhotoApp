@@ -7,12 +7,17 @@
 //
 
 import UIKit;
+import Social
+
 //import HRToast;
 //let themeColor = UIColor(red: 22/255, green: 160/255, blue: 133/255, alpha: 1.0);
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
+    
+    @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var exitOptionsView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var takePictureButton: UIButton!
     @IBOutlet weak var galleryButton: UIButton!
@@ -49,6 +54,8 @@ UINavigationControllerDelegate {
         super.viewDidLoad()
 
         hideImageStuff()
+        exitOptionsView.isHidden = true
+        saveView.isHidden = true
 
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -134,19 +141,76 @@ UINavigationControllerDelegate {
         }
     }
     
+    //save image details
     @IBAction func saveImage(_ sender: Any) {
-        _ = imageView.screenShot;
+        saveView.isHidden = false
+    }
+    @IBAction func cancelSave(_ sender: Any) {
+        saveView.isHidden = true
+    }
     
+    
+    @IBAction func saveImageToPhone(_ sender: Any) {
+        _ = imageView.screenShot;
         hideImageStuff()
+        saveView.isHidden = true
+        self.view.makeToast(message: "Picture Saved", duration: 2.0, position:HRToastPositionCenter as AnyObject)
+    }
+    @IBAction func facebookSave(_ sender: Any) {
         
-         self.view.makeToast(message: "Picture Saved", duration: 2.0, position:HRToastPositionCenter as AnyObject)
+//        hideImageStuff()
+//        saveView.isHidden = true
+        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)){
+            _ = imageView.facebook;
+            self.view.makeToast(message: "Saved to facebook", duration: 2.0, position:HRToastPositionCenter as AnyObject)
+        }else{
+            self.view.makeToast(message: "Please log into facebook on your phone", duration: 2.0, position:HRToastPositionCenter as AnyObject)
+        }
+        
+    }
+    @IBAction func twitterSave(_ sender: Any) {
+        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)){
+            _ = imageView.twitter;
+            self.view.makeToast(message: "Tweet created", duration: 2.0, position:HRToastPositionCenter as AnyObject)
+        }else{
+            self.view.makeToast(message: "Please log into twitter on your phone", duration: 2.0, position:HRToastPositionCenter as AnyObject)
+        }
+        
+    }
+    
+    //Cancel view options
+    
+    @IBAction func cancel(_ sender: Any) {
+
+        exitOptionsView.isHidden = false
+        
+    }
+    @IBAction func cancelEdit(_ sender: Any) {
+        hideImageStuff()
+        imageView.image = nil
+        exitOptionsView.isHidden = true
+    }
+    
+    @IBAction func resetImage(_ sender: Any) {
+        imageView.image = backgroundImage;
+      
+        exitOptionsView.isHidden = true
+    }
+    
+    @IBAction func cancelExitOptions(_ sender: Any) {
+        
+     exitOptionsView.isHidden = true
 
     }
-    @IBAction func cancel(_ sender: Any) {
-        //hideImageStuff()
+    @IBAction func exitToMain(_ sender: Any) {
+        hideImageStuff()
         imageView.image = nil
-        imageView.image = backgroundImage;
+        exitOptionsView.isHidden = true
+        
     }
+    
+    
+    
     
     func hideImageStuff(){
         buttonView.isHidden = false;
@@ -183,8 +247,10 @@ UINavigationControllerDelegate {
 //        self.view.addSubview(colorPicker)
 //        colorPicker.setViewColor(UIColor.redColor())
         
-        colorPicker.setViewColor(selectedColor)
+//        colorPicker.setViewColor(selectedColor)
     }
+    
+    
         
 
 }
@@ -203,7 +269,34 @@ extension UIImageView {
         }
         return nil
     }
+    var facebook: UIImageView?  {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 1.0);
+        if let _ = UIGraphicsGetCurrentContext() {
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
+            let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+
+            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            composeSheet?.setInitialText("Hello, Facebook!")
+            composeSheet?.add(screenshot)
+        }
+        return nil
+    }
+    
+    var twitter: UIImageView?  {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 1.0);
+        if let _ = UIGraphicsGetCurrentContext() {
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
+            let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            let composeSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            composeSheet?.setInitialText("Hello, twitter!")
+            composeSheet?.add(screenshot)
+        }
+        return nil
+    }
 }
+
 extension UIViewController {
     
     func showToast(message : String) {

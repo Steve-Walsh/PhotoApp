@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHG-fA-4Yu"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHG-fA-4Yu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="65n-Ey-ctB">
+                                <rect key="frame" x="16" y="219" width="343" height="230"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="To edit picture please :" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-Qx-FVH">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="McG-Wq-sA4"/>
                                         </constraints>
@@ -31,6 +38,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flb-86-NW3">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.15294117647058825" green="0.68235294117647061" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6gg-R0-Uud"/>
@@ -43,6 +51,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Or" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2u-zM-yDV">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="g41-1W-Ji1"/>
                                         </constraints>
@@ -51,6 +60,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDg-Kx-5Ys">
+                                        <rect key="frame" x="0.0" y="180" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cPM-Yy-0g9"/>
@@ -65,12 +75,14 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-U2-oWx">
+                                <rect key="frame" x="16" y="617" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SjG-oD-3gS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-n5-Hgz">
+                                <rect key="frame" x="325" y="617" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,7 +91,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-SY-5vF">
-                                <frame key="frameInset" minX="313" minY="28" width="46" height="30"/>
+                                <rect key="frame" x="313" y="28" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="X">
@@ -89,19 +101,159 @@
                                     <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LFT-pQ-MKs"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-aI-Uxc" userLabel="optionsView">
+                                <rect key="frame" x="138" y="274" width="100" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j20-4H-LKn">
+                                        <rect key="frame" x="3" y="44" width="95" height="30"/>
+                                        <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="DLV-Pm-vw5"/>
+                                            <constraint firstAttribute="height" constant="30" id="smi-YM-yc8"/>
+                                        </constraints>
+                                        <state key="normal" title="Clear">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G5I-TZ-DH8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JJ-Id-YmJ">
+                                        <rect key="frame" x="3" y="82" width="95" height="30"/>
+                                        <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration" label="a"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4Uj-q9-EUi"/>
+                                            <constraint firstAttribute="width" constant="95" id="5bj-ms-8YE"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelExitOptions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNT-Pm-6c2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-Jz-Cy7">
+                                        <rect key="frame" x="3" y="8" width="95" height="30"/>
+                                        <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ZRC-Mg-dY5"/>
+                                            <constraint firstAttribute="width" constant="95" id="yGG-ws-jjR"/>
+                                        </constraints>
+                                        <state key="normal" title="Exit">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQE-77-Rsu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1tf-Jz-Cy7" firstAttribute="centerX" secondItem="j20-4H-LKn" secondAttribute="centerX" id="34P-kM-5dd"/>
+                                    <constraint firstItem="1tf-Jz-Cy7" firstAttribute="centerX" secondItem="Eh9-aI-Uxc" secondAttribute="centerX" id="7pl-Vz-4Bu"/>
+                                    <constraint firstAttribute="height" constant="120" id="MUR-ND-S8z"/>
+                                    <constraint firstAttribute="width" constant="100" id="bLc-7Z-cuC"/>
+                                    <constraint firstItem="2JJ-Id-YmJ" firstAttribute="leading" secondItem="1tf-Jz-Cy7" secondAttribute="leading" id="haZ-Mh-mGL"/>
+                                    <constraint firstItem="2JJ-Id-YmJ" firstAttribute="top" secondItem="j20-4H-LKn" secondAttribute="bottom" constant="8" symbolic="YES" id="rXW-me-Yju"/>
+                                    <constraint firstItem="j20-4H-LKn" firstAttribute="centerY" secondItem="Eh9-aI-Uxc" secondAttribute="centerY" constant="-1" id="tuA-63-Sjv"/>
+                                    <constraint firstItem="j20-4H-LKn" firstAttribute="top" secondItem="1tf-Jz-Cy7" secondAttribute="bottom" constant="6" id="uQM-TM-jpa"/>
+                                    <constraint firstAttribute="trailing" secondItem="2JJ-Id-YmJ" secondAttribute="trailing" constant="2" id="vyL-Cj-CIw"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-37-AIg" userLabel="saveView">
+                                <rect key="frame" x="137" y="273" width="100" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYB-TL-QPi">
+                                        <rect key="frame" x="62" y="45" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="7QT-CD-UWg"/>
+                                            <constraint firstAttribute="height" constant="30" id="iHg-GF-bKi"/>
+                                        </constraints>
+                                        <state key="normal" title="twitter" image="twitter-icon-download-18.png">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twitterSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HZV-gi-hkU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4H-be-al3">
+                                        <rect key="frame" x="3" y="82" width="95" height="30"/>
+                                        <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration" label="a"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="862-1f-x2X"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="CuR-Jt-chJ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="GCQ-Ha-xxg"/>
+                                            <constraint firstAttribute="width" constant="95" id="GDJ-FH-Kgh"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xuS-jU-jyZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnS-Ez-ffw">
+                                        <rect key="frame" x="3" y="8" width="95" height="30"/>
+                                        <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="pPa-je-tZh"/>
+                                            <constraint firstAttribute="height" constant="30" id="sHC-6A-jJI"/>
+                                        </constraints>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveImageToPhone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OC0-yX-xmK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-aR-MOg">
+                                        <rect key="frame" x="8" y="45" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="EiC-ol-NHJ"/>
+                                            <constraint firstAttribute="height" constant="30" id="xJb-rK-g9n"/>
+                                        </constraints>
+                                        <state key="normal" title="facebook" image="fb-art.png">
+                                            <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="facebookSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b76-o4-4qk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UWk-aR-MOg" firstAttribute="centerY" secondItem="j0Y-37-AIg" secondAttribute="centerY" id="2IF-MT-a83"/>
+                                    <constraint firstItem="UWk-aR-MOg" firstAttribute="leading" secondItem="j0Y-37-AIg" secondAttribute="leading" constant="8" id="BRv-8k-ppM"/>
+                                    <constraint firstAttribute="width" constant="100" id="Hqa-Wq-5Tb"/>
+                                    <constraint firstAttribute="height" constant="120" id="LQE-aq-dI5"/>
+                                    <constraint firstItem="OYB-TL-QPi" firstAttribute="centerY" secondItem="j0Y-37-AIg" secondAttribute="centerY" id="P4A-zk-lx4"/>
+                                    <constraint firstItem="k4H-be-al3" firstAttribute="bottom" secondItem="j0Y-37-AIg" secondAttribute="bottomMargin" id="UhK-GT-Jm4"/>
+                                    <constraint firstAttribute="trailing" secondItem="OYB-TL-QPi" secondAttribute="trailing" constant="8" id="YSr-LH-zYb"/>
+                                    <constraint firstItem="k4H-be-al3" firstAttribute="leading" secondItem="UnS-Ez-ffw" secondAttribute="leading" id="dqn-8q-VRu"/>
+                                    <constraint firstAttribute="trailing" secondItem="k4H-be-al3" secondAttribute="trailing" constant="2" id="eBM-DO-CjV"/>
+                                    <constraint firstItem="UnS-Ez-ffw" firstAttribute="top" secondItem="j0Y-37-AIg" secondAttribute="topMargin" id="yy2-zi-rLL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="MHG-fA-4Yu" secondAttribute="trailing" id="2Uk-rY-vyG"/>
                             <constraint firstItem="MHG-fA-4Yu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5DO-fs-CqQ"/>
-                            <constraint firstItem="aKV-U2-oWx" firstAttribute="baseline" secondItem="iJK-n5-Hgz" secondAttribute="baseline" id="94k-c7-np1"/>
+                            <constraint firstItem="aKV-U2-oWx" firstAttribute="baseline" secondItem="iJK-n5-Hgz" secondAttribute="baseline" constant="-24" id="94k-c7-np1"/>
+                            <constraint firstItem="Eh9-aI-Uxc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IHV-DJ-GB3"/>
                             <constraint firstItem="65n-Ey-ctB" firstAttribute="trailing" secondItem="iJK-n5-Hgz" secondAttribute="trailing" id="LDh-FD-1oe"/>
                             <constraint firstItem="65n-Ey-ctB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a29-bv-GqE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MHG-fA-4Yu" secondAttribute="bottom" id="d3S-15-Cei"/>
                             <constraint firstItem="MHG-fA-4Yu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dHW-dW-0Uv"/>
+                            <constraint firstItem="j0Y-37-AIg" firstAttribute="centerY" secondItem="MHG-fA-4Yu" secondAttribute="centerY" id="dNf-cA-6ev"/>
                             <constraint firstItem="65n-Ey-ctB" firstAttribute="centerY" secondItem="MHG-fA-4Yu" secondAttribute="centerY" id="eNs-C7-egS"/>
+                            <constraint firstAttribute="trailing" secondItem="MHG-fA-4Yu" secondAttribute="trailing" id="em3-Ts-h6o"/>
+                            <constraint firstItem="j0Y-37-AIg" firstAttribute="centerX" secondItem="65n-Ey-ctB" secondAttribute="centerX" id="hcK-MP-UpK"/>
                             <constraint firstAttribute="bottom" secondItem="aKV-U2-oWx" secondAttribute="bottom" constant="20" symbolic="YES" id="i9J-Wz-pe6"/>
                             <constraint firstItem="65n-Ey-ctB" firstAttribute="leading" secondItem="aKV-U2-oWx" secondAttribute="leading" id="mam-ZT-V4p"/>
+                            <constraint firstItem="Eh9-aI-Uxc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="okX-86-DWJ"/>
+                            <constraint firstItem="Eh9-aI-Uxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pi9-8T-CvM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="65n-Ey-ctB" secondAttribute="trailing" id="qB0-7G-ec8"/>
                             <constraint firstItem="iJK-n5-Hgz" firstAttribute="top" secondItem="aKV-U2-oWx" secondAttribute="top" id="r9y-SF-gOR"/>
                         </constraints>
@@ -110,9 +262,11 @@
                         <outlet property="buttonView" destination="65n-Ey-ctB" id="sWc-56-Jon"/>
                         <outlet property="cancelButton" destination="WFp-SY-5vF" id="tXI-ie-0dz"/>
                         <outlet property="colorButton" destination="aKV-U2-oWx" id="e67-Po-vfK"/>
+                        <outlet property="exitOptionsView" destination="Eh9-aI-Uxc" id="ECH-PP-vZs"/>
                         <outlet property="galleryButton" destination="bDg-Kx-5Ys" id="kby-lM-19I"/>
                         <outlet property="imageView" destination="MHG-fA-4Yu" id="HNX-dR-if6"/>
                         <outlet property="saveButton" destination="iJK-n5-Hgz" id="dfs-Bm-6Eg"/>
+                        <outlet property="saveView" destination="j0Y-37-AIg" id="Cqa-Hi-FLo"/>
                         <outlet property="stackView" destination="65n-Ey-ctB" id="YSA-x7-sal"/>
                         <outlet property="takePictureButton" destination="flb-86-NW3" id="WNP-Vo-kPu"/>
                     </connections>
@@ -122,4 +276,8 @@
             <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fb-art.png" width="250" height="250"/>
+        <image name="twitter-icon-download-18.png" width="512" height="512"/>
+    </resources>
 </document>
