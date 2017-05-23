@@ -130,6 +130,7 @@ UINavigationControllerDelegate {
     
     @IBAction func saveImage(_ sender: Any) {
         _ = imageView.screenShot;
+    
         hideImageStuff()
         
          self.view.makeToast(message: "Picture Saved", duration: 2.0, position:HRToastPositionCenter as AnyObject)
@@ -179,7 +180,6 @@ extension UIImageView {
             let screenshot = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             UIImageWriteToSavedPhotosAlbum((screenshot)!, nil, nil, nil)
-//            return true
         }
         return nil
     }
