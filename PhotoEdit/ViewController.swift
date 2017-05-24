@@ -93,6 +93,7 @@ UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         showImageStuff()
+        removeDimImageStuff()
         imageView.image = image;
         backgroundImage = image;
         self.dismiss(animated: true, completion: nil);
@@ -116,6 +117,8 @@ UINavigationControllerDelegate {
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
         swiped = false
         if let touch = touches.first {
             lastPoint = touch.location(in: self.view)
@@ -123,20 +126,28 @@ UINavigationControllerDelegate {
     }
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-        if(gotImage){
-            UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
-            imageView.image?.draw(in: view.bounds)
-            let context = UIGraphicsGetCurrentContext()
-            context?.move(to: fromPoint)
-            context?.addLine(to: toPoint)
-            context?.setLineCap(CGLineCap.round)
-            context?.setLineWidth(brushWidth)
-            context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
-            context?.setBlendMode(CGBlendMode.normal)
-            context?.strokePath()
-            imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            imageView.alpha = opacity
-            UIGraphicsEndImageContext()
+        if(exitOptionsView.isHidden == false){
+            exitOptionsView.isHidden = true
+            removeDimImageStuff()
+        }else if (saveView.isHidden == false){
+            saveView.isHidden = true
+            removeDimImageStuff()
+        }else{
+            if(gotImage){
+                UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
+                imageView.image?.draw(in: view.bounds)
+                let context = UIGraphicsGetCurrentContext()
+                context?.move(to: fromPoint)
+                context?.addLine(to: toPoint)
+                context?.setLineCap(CGLineCap.round)
+                context?.setLineWidth(brushWidth)
+                context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+                context?.setBlendMode(CGBlendMode.normal)
+                context?.strokePath()
+                imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+                imageView.alpha = opacity
+                UIGraphicsEndImageContext()
+            }
         }
     }
     
@@ -144,9 +155,12 @@ UINavigationControllerDelegate {
     @IBAction func saveImage(_ sender: Any) {
         saveView.isHidden = false
         exitOptionsView.isHidden = true
+        dimImageStuff()
+        
     }
     @IBAction func cancelSave(_ sender: Any) {
         saveView.isHidden = true
+        removeDimImageStuff()
     }
     
     
@@ -222,18 +236,20 @@ UINavigationControllerDelegate {
     @IBAction func cancel(_ sender: Any) {
         exitOptionsView.isHidden = false
         saveView.isHidden = true
+        dimImageStuff()
         
     }
     @IBAction func cancelEdit(_ sender: Any) {
         hideImageStuff()
         imageView.image = nil
         exitOptionsView.isHidden = true
+        
     }
     
     @IBAction func resetImage(_ sender: Any) {
         imageView.image = backgroundImage;
-      
         exitOptionsView.isHidden = true
+        removeDimImageStuff()
     }
     
     @IBAction func cancelExitOptions(_ sender: Any) {
@@ -241,12 +257,12 @@ UINavigationControllerDelegate {
      exitOptionsView.isHidden = true
 
     }
-    @IBAction func exitToMain(_ sender: Any) {
-        hideImageStuff()
-        imageView.image = nil
-        exitOptionsView.isHidden = true
-        
-    }
+//    @IBAction func exitToMain(_ sender: Any) {
+//        hideImageStuff()
+//        imageView.image = nil
+//        exitOptionsView.isHidden = true
+//        
+//    }
     
     
     
@@ -279,6 +295,20 @@ UINavigationControllerDelegate {
         imageView.isHidden = false;
     }
     
+    func dimImageStuff(){
+        saveButton.alpha = 0.3;
+        colorButton.alpha = 0.3;
+        cancelButton.alpha = 0.3;
+        imageView.alpha = 0.3
+    }
+    
+    func removeDimImageStuff(){
+        saveButton.alpha = 1;
+        colorButton.alpha = 1;
+        cancelButton.alpha = 1;
+        imageView.alpha = 1
+    
+    }
 
     
     @IBAction func changeColor(_ sender: AnyObject) {
