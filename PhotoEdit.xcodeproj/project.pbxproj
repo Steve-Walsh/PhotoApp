@@ -17,6 +17,7 @@
 		7B1772101E8D4C70001527BC /* PhotoEditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17720F1E8D4C70001527BC /* PhotoEditUITests.swift */; };
 		AA689F5D1ED4720C0069FB2F /* fb-art.png in Resources */ = {isa = PBXBuildFile; fileRef = AA689F5B1ED4720C0069FB2F /* fb-art.png */; };
 		AA689F5E1ED4720C0069FB2F /* twitter-icon-download-18.png in Resources */ = {isa = PBXBuildFile; fileRef = AA689F5C1ED4720C0069FB2F /* twitter-icon-download-18.png */; };
+		AADA4F0C1ED50B2A0083DBDB /* edit-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = AADA4F0B1ED50B2A0083DBDB /* edit-picture.png */; };
 		AAEE7A711EC0A290009F1FD7 /* HRToast+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		7B1772111E8D4C70001527BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA689F5B1ED4720C0069FB2F /* fb-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-art.png"; sourceTree = "<group>"; };
 		AA689F5C1ED4720C0069FB2F /* twitter-icon-download-18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon-download-18.png"; sourceTree = "<group>"; };
+		AADA4F0B1ED50B2A0083DBDB /* edit-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-picture.png"; sourceTree = "<group>"; };
 		AAEE7A701EC0A290009F1FD7 /* HRToast+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HRToast+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 		AA689F5F1ED472110069FB2F /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				AADA4F0B1ED50B2A0083DBDB /* edit-picture.png */,
 				AA689F5B1ED4720C0069FB2F /* fb-art.png */,
 				AA689F5C1ED4720C0069FB2F /* twitter-icon-download-18.png */,
 			);
@@ -256,6 +259,7 @@
 				AA689F5E1ED4720C0069FB2F /* twitter-icon-download-18.png in Resources */,
 				AA689F5D1ED4720C0069FB2F /* fb-art.png in Resources */,
 				7B1771F71E8D4C70001527BC /* Assets.xcassets in Resources */,
+				AADA4F0C1ED50B2A0083DBDB /* edit-picture.png in Resources */,
 				7B1771F21E8D4C6F001527BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
